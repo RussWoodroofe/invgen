@@ -1,0 +1,16 @@
+#!/bin/bash
+INVGEN_CHUNKSIZE=$((1*10**9))
+INVGEN_STOPSTEP=10
+INVGEN_NUMJOBS=5
+
+# Change "i=" to change the starting step
+# j is used for controlling the concurrent jobs
+for ((i=0, j=0 ; i<INVGEN_STOPSTEP; i++, j++))
+do
+  ./invgen_sievelp $((i*INVGEN_CHUNKSIZE)) $(((i+1)*INVGEN_CHUNKSIZE)) > ~/out-$i.g &
+  sleep .1
+  if [ $(((j+1)%INVGEN_NUMJOBS)) -eq 0 ]; then
+    wait
+  fi
+done
+wait
