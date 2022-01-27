@@ -1,3 +1,5 @@
+# Copyright 2022 Robert Guralnick, John Shareshian, and Russ Woodroofe
+
 #======================================================
 # The following functions use a variant of the segmented sieve
 #  of Eratosthenes.  In each segment, it calculates the prime

@@ -1,3 +1,5 @@
+// Copyright 2022 Robert Guralnick, John Shareshian, and Russ Woodroofe
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
